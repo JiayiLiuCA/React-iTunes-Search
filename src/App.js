@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+//CSS
+import './Styles/App.css'
+import Header from './Components/Header';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
+      <Header />
       <h1>App</h1>
     </div>
   );
