@@ -3,7 +3,12 @@ import '../Styles/Header.css'
 import searchIcon from '../img/search.png'
 import favicon from '../img/favicon-32x32.png'
 
-const Header = () => {
+const Header = ({handleChange}) => {
+    const handleKeyup = e => {
+        if (e.key === 'Enter') {
+            handleChange(e.target.value)
+        }
+    }
     return (
         <div className="header">
             <div className="header-icon">
@@ -15,6 +20,7 @@ const Header = () => {
                     <input
                         type="text"
                         placeholder="Search"
+                        onKeyUp={(e) => handleKeyup(e)}
                     />
                 </div>
             </div>
