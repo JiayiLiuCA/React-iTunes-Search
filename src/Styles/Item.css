@@ -1,0 +1,40 @@
+.item {
+    width: 172px;
+    padding-bottom: 10px;
+    border: none;
+    outline:none;
+    background: none;
+    cursor:pointer
+}
+
+
+
+.item-metadata {
+    width: 172px;
+    line-height: 140%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.item-metadata:hover {
+    text-decoration: underline;
+    
+}
+
+.item-metadata-collection-name {
+    padding-top: 4px;
+    font-size: small;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.item-metadata-artist-name {
+    font-size: 90%;
+    color: grey;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

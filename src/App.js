@@ -8,23 +8,26 @@ import Header from './Components/Header';
 const App = () => {
   const [searchText, setSearchText] = useState('')
   const [items, setItems] = useState([])
-  //const [isLoading, setIsLoading] = useState(true)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  //console.log(isLoaded)
 
   const handleChange = searchText => {
-    //console.log(searchText);
     setSearchText(searchText)
   }
+
+  //useEffect won't run if searchText is empty or unchanged
   useEffect(() => {
     if (searchText) {
       //fetch url
       async function fetchItems() {
         const response = await fetch(
-          `https://itunes.apple.com/search?term=${searchText}&genres=classical&entity=album&limit=200&country=ca`
+          `https://itunes.apple.com/search?term=${searchText}&media=music&entity=album&limit=200&country=ca`
         );
         const items = await response.json();
         console.log(items.results);
         setItems(items.results);
-        //setIsLoading(false)
+        setIsLoaded(true)
       }
       fetchItems();
     }
@@ -32,9 +35,14 @@ const App = () => {
 
   return (
     <div className="container">
-      
-      <Header handleChange={handleChange} />
-      <ItemList items={items}/>
+      <Header handleChange={handleChange} isLoaded={isLoaded}/>
+      {isLoaded &&
+        !items.length &&
+        <strong>
+          {`No results for '${searchText}' :(`}
+        </strong>
+      }
+      <ItemList items={items} />
     </div>
   );
 }

@@ -3,18 +3,19 @@ import '../Styles/Header.css'
 import searchIcon from '../img/search.png'
 import favicon from '../img/favicon-32x32.png'
 
-const Header = ({handleChange}) => {
+const Header = ({handleChange, isLoaded}) => {
     const handleKeyup = e => {
         if (e.key === 'Enter') {
             handleChange(e.target.value)
         }
     }
+    console.log(isLoaded)
     return (
         <div className="header">
             <div className="header-icon">
                 <img src={favicon} width="30" height="30" alt="favicon" />
             </div>
-            <div className="header-search-bar">
+            <div className={`header-search-bar${!isLoaded ? ' header-search-bar-transform' : ''}`}>
                 <div className="header-search-bar-input">
                     <img src={searchIcon} alt="searchIcon" />
                     <input
