@@ -15,7 +15,7 @@
 }
 
 .header-search-bar {
-
+    margin:auto;
 }
 
 .header-search-bar-input {
@@ -35,7 +35,7 @@
     width: 35vw;
     min-width: 300px;
     height:45px;
-    padding-left: 50px;
+    padding-left: 45px;
     border-radius: 10px;
     font-size: large;
     outline: none;

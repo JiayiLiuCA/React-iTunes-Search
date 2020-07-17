@@ -4,11 +4,24 @@ import React, { useState, useEffect } from 'react';
 import './Styles/App.css'
 import Header from './Components/Header';
 
-function App() {
+const App =  () => {
+  const [searchText, setSearchText] = useState('')
+  const [items, setItems] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    async function fetchItems() {
+      const response = await fetch("https://itunes.apple.com/search?term=beethoven&limit=200&country=ca")
+      const items = await response.json()
+      console.log(items);
+    }
+    fetchItems();
+  }, [])
+
   return (
     <div className="container">
       <Header />
-      <h1>App</h1>
+      
     </div>
   );
 }
