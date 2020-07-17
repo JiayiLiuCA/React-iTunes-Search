@@ -1,6 +1,11 @@
-.itemlist {
+
+.itemlist-container {
     padding-top: 40px;
+}
+
+.itemlist {
+    max-width: 1920px;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
 }
