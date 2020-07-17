@@ -5,7 +5,20 @@
 }
 
 .container{
+    text-align: center;
+    height: 100vh;
+    background-color: none;
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 
+    
+}
+
+.container-loaded {
+    background-image: none;
+    background-color: white;
 }
 
 

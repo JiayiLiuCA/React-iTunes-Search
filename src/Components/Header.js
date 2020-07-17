@@ -15,12 +15,14 @@ const Header = ({handleChange, isLoaded}) => {
             <div className="header-icon">
                 <img src={favicon} width="30" height="30" alt="favicon" />
             </div>
+            {/* transform search bar to middle before searching */}
             <div className={`header-search-bar${!isLoaded ? ' header-search-bar-transform' : ''}`}>
                 <div className="header-search-bar-input">
                     <img src={searchIcon} alt="searchIcon" />
                     <input
                         type="text"
-                        placeholder="Search"
+                        placeholder="Search iTunes"
+                        spellCheck="false"
                         onKeyUp={(e) => handleKeyup(e)}
                     />
                 </div>

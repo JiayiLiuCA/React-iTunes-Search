@@ -4,13 +4,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(229,229,234);
+    background-color: rgba(229,229,234,0.0);
+
 }
 
-.header-hide-background-img {
-    background-image: none;
-    background-color: rgb(229,229,234);
-}
 
 .header-icon {
     padding-left: 20px;
@@ -22,7 +19,7 @@
 }
 
 .header-search-bar-transform {
-    transform: translate(0,26vh);
+    transform: translate(0px,26vh);
 }
 
 .header-search-bar-input {
@@ -39,8 +36,8 @@
 
 .header-search-bar-input input {
     background: white;
-    width: 30vw;
-    min-width: 300px;
+    width: 35vw;
+    min-width: 400px;
     height:45px;
     padding-left: 45px;
     border-radius: 10px;

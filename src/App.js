@@ -34,7 +34,7 @@ const App = () => {
   }, [searchText])
 
   return (
-    <div className="container">
+    <div className={`container${isLoaded? ' container-loaded' : ''}`}>
       <Header handleChange={handleChange} isLoaded={isLoaded}/>
       {isLoaded &&
         !items.length &&
