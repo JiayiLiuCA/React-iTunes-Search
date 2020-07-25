@@ -8,7 +8,7 @@ import Header from './Components/Header';
 const App = () => {
   const [searchText, setSearchText] = useState('')
   const [items, setItems] = useState([])
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [loadStatus, setLoadStatus] = useState('beforeLoad')
 
   //console.log(isLoaded)
 
@@ -19,6 +19,7 @@ const App = () => {
   //useEffect won't run if searchText is empty or unchanged
   useEffect(() => {
     if (searchText) {
+      setLoadStatus('loading')
       //fetch url
       async function fetchItems() {
         const response = await fetch(
@@ -27,16 +28,19 @@ const App = () => {
         const items = await response.json();
         console.log(items.results);
         setItems(items.results);
-        setIsLoaded(true)
+        setLoadStatus('loaded')
       }
       fetchItems();
     }
   }, [searchText])
 
   return (
-    <div className={`container${isLoaded? ' container-loaded' : ''}`}>
-      <Header handleChange={handleChange} isLoaded={isLoaded}/>
-      {isLoaded &&
+    <div className={`container${loadStatus === 'loaded'? ' container-loaded' : ''}`}>
+      <Header handleChange={handleChange} isLoaded={loadStatus}/>
+      {loadStatus === 'loading' &&
+        <div> loading </div>
+      }
+      {loadStatus === 'loaded' &&
         !items.length &&
         <strong>
           {`No results for '${searchText}' :(`}
