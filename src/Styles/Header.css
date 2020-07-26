@@ -1,10 +1,10 @@
 .header {
     width: 100%;
-    height: 60px;
+    height: 5vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(229,229,234,0.0);
+    background-color: transparent;
 
 }
 
@@ -30,21 +30,31 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 16px;
+    left: calc(100% - 40px);
+
+    cursor: pointer;
+}
+
+/*Cancel button style*/
+#Search::-webkit-search-cancel-button{
+    position:relative;
+    right:55px; 
+    cursor: pointer;
+    
 }
 
 .header-search-bar-input input {
     background: white;
-    width: 35vw;
-    min-width: 500px;
+    width: 40vw;
+    min-width: 350px;
+    max-width: 700px;
     height:52px;
 
-    padding-left: 45px;
+    padding-left: 25px;
     border: 0px;
     border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /*ridge effect*/
-    border-style: ridge;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.6); /*ridge effect*/
     font-size: large;
     outline: none;
 }

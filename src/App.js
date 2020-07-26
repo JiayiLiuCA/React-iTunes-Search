@@ -5,6 +5,8 @@ import ItemList from './Components/ItemList'
 import './Styles/App.css'
 import Header from './Components/Header';
 
+import logo from './img/logo.svg'
+
 const App = () => {
   const [searchText, setSearchText] = useState('')
   const [items, setItems] = useState([])
@@ -38,7 +40,9 @@ const App = () => {
     <div className={`container${loadStatus !== 'beforeLoad'? ' container-loaded' : ''}`}>
       <Header handleChange={handleChange} loadStatus={loadStatus}/>
       {loadStatus === 'loading' &&
-        <div> loading </div>
+        <div> 
+          <img src={logo} width='30vh' height='30vh' alt='react-search-logo'/>
+        </div>
       }
       {loadStatus === 'loaded' &&
         !items.length &&
