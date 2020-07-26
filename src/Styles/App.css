@@ -8,6 +8,7 @@
     text-align: center;
     height: 100vh;
     background-color: gray;
+
     /*
     background-image: url("../img/background.jpg");
     background-repeat: no-repeat;
@@ -23,6 +24,28 @@
     background-color: white;
 }
 
+.search-logo-container {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+}
 
+.react-search-logo {
+    height: 40vmin;
+    width: 40vmin;
+    pointer-events: none;
+    animation: App-logo-spin infinite 10s linear;
+}
+
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
 

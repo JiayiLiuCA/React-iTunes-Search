@@ -8,7 +8,7 @@
 }
 
 .itemlist {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(185px,1fr));
     gap: 1rem;
     align-items: center;

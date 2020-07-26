@@ -39,9 +39,9 @@ const App = () => {
   return (
     <div className={`container${loadStatus !== 'beforeLoad'? ' container-loaded' : ''}`}>
       <Header handleChange={handleChange} loadStatus={loadStatus}/>
-      {loadStatus === 'loading' &&
-        <div> 
-          <img src={logo} width='30vh' height='30vh' alt='react-search-logo'/>
+      {loadStatus === 'loading' && 
+        <div className="search-logo-container"> 
+          <img src={logo} className="react-search-logo" width='30vh' height='30vh' alt='react-search-logo'/>
         </div>
       }
       {loadStatus === 'loaded' &&
@@ -50,7 +50,7 @@ const App = () => {
           {`No results for '${searchText}' :(`}
         </strong>
       }
-      <ItemList items={items} />
+      {loadStatus === 'loaded' && <ItemList items={items} />}
     </div>
   );
 }
