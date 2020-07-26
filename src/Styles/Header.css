@@ -19,7 +19,7 @@
 }
 
 .header-search-bar-transform {
-    transform: translate(0px,26vh);
+    transform: translate(0px,20vh);
 }
 
 .header-search-bar-input {
@@ -30,17 +30,21 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 12px;
+    top: 15px;
     left: 15px;
 }
 
 .header-search-bar-input input {
     background: white;
     width: 35vw;
-    min-width: 400px;
-    height:45px;
+    min-width: 500px;
+    height:52px;
+
     padding-left: 45px;
-    border-radius: 10px;
+    border: 0px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /*ridge effect*/
+    border-style: ridge;
     font-size: large;
     outline: none;
 }

@@ -1,12 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../Styles/Header.css'
 import searchIcon from '../img/search.png'
 import favicon from '../img/favicon-32x32.png'
 
 const Header = ({ handleChange, loadStatus }) => {
+    const [searchText, setSearchText] = useState('')
+
     const handleKeyup = e => {
         if (e.key === 'Enter') {
-            handleChange(e.target.value)
+            handleChange(searchText)
         }
     }
     
@@ -20,10 +22,12 @@ const Header = ({ handleChange, loadStatus }) => {
                 <div className="header-search-bar-input">
                     <img src={searchIcon} alt="searchIcon" />
                     <input
-                        type="text"
+                        type="search"
                         placeholder="Search iTunes"
+                        value={searchText}
                         spellCheck="false"
-                        onKeyUp={(e) => handleKeyup(e)}
+                        onChange={e => setSearchText(e.target.value)}
+                        onKeyUp={e => handleKeyup(e)}
                     />
                 </div>
             </div>

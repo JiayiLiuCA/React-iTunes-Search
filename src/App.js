@@ -23,7 +23,7 @@ const App = () => {
       //fetch url
       async function fetchItems() {
         const response = await fetch(
-          `https://itunes.apple.com/search?term=${searchText}&media=music&entity=album&limit=200&country=ca`
+          `https://itunes.apple.com/search?term=${searchText}&entity=album&country=ca&limit=200&offset=0`
         );
         const items = await response.json();
         console.log(items.results);
@@ -35,8 +35,8 @@ const App = () => {
   }, [searchText])
 
   return (
-    <div className={`container${loadStatus === 'loaded'? ' container-loaded' : ''}`}>
-      <Header handleChange={handleChange} isLoaded={loadStatus}/>
+    <div className={`container${loadStatus !== 'beforeLoad'? ' container-loaded' : ''}`}>
+      <Header handleChange={handleChange} loadStatus={loadStatus}/>
       {loadStatus === 'loading' &&
         <div> loading </div>
       }
