@@ -1,11 +1,12 @@
 
 .itemlist {
     display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(185px,1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(185px,auto));
+    gap: 2rem;
     align-items: center;
     justify-content: center;
 }
+
 
 .itemlist img {
     border: 1px solid rgba(211,211,211,0.7)
