@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 .container{
     text-align: center;
     height: 100vh;
@@ -15,12 +19,17 @@
     background-size: cover;
     background-position: center center;
     */
-
-    
 }
 
 .container-loaded {
     background-image: none;
     background-color: white;
+}
+
+.content-container {
+    max-width: 1800px;
+    padding-top: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 

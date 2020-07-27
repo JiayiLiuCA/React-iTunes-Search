@@ -1,0 +1,27 @@
+.page-button {
+    width: 200px;
+    padding-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    font-size: 130%;
+    font-weight: bold;
+
+
+}
+
+.page-button button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    
+}
+
+.page-button button:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
