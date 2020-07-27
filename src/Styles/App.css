@@ -15,14 +15,12 @@
 .container{
     text-align: center;
     height: 100vh;
-    background-color: gray;
-
-    /*
+    
     background-image: url("../img/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    */
+    
 }
 
 .container-loaded {
