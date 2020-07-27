@@ -5,6 +5,16 @@
     outline:none;
     background: none;
     cursor:pointer
+
+}
+
+.item img {
+    transition: transform 0.2s linear;
+}
+
+.item img:hover {
+    transition: transform 0.2s linear;
+    transform: scale(1.05);
 }
 
 .item-metadata {

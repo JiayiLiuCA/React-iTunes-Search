@@ -1,0 +1,23 @@
+.search-logo-container {
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: 150px;
+
+}
+
+.react-search-logo {
+    height: 500px;
+    width: 500px;
+    pointer-events: none;
+    animation: App-logo-spin infinite 10s linear;
+}
+
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}

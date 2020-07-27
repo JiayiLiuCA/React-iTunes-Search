@@ -1,0 +1,10 @@
+.no-result {
+    position: absolute;
+    left: 50%;
+    margin-top: 150px;
+    margin-left: -200px;
+
+    display: flex;
+    flex-direction: column;
+
+}

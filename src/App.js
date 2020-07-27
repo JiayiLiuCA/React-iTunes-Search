@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from './Components/ItemList'
+import Loading from './Components/Loading'
+import NoResult from './Components/NoResult'
 
 //CSS
 import './Styles/App.css'
 import Header from './Components/Header';
 
-import logo from './img/logo.svg'
 
 const App = () => {
   const [searchText, setSearchText] = useState('')
@@ -37,18 +38,11 @@ const App = () => {
   }, [searchText])
 
   return (
-    <div className={`container${loadStatus !== 'beforeLoad'? ' container-loaded' : ''}`}>
-      <Header handleChange={handleChange} loadStatus={loadStatus}/>
-      {loadStatus === 'loading' && 
-        <div className="search-logo-container"> 
-          <img src={logo} className="react-search-logo" width='30vh' height='30vh' alt='react-search-logo'/>
-        </div>
-      }
-      {loadStatus === 'loaded' &&
-        !items.length &&
-        <strong>
-          {`No results for '${searchText}' :(`}
-        </strong>
+    <div className={`container${loadStatus !== 'beforeLoad' ? ' container-loaded' : ''}`}>
+      <Header handleChange={handleChange} loadStatus={loadStatus} />
+      {loadStatus === 'loading' && <Loading /> }
+      {loadStatus === 'loaded' && !items.length &&
+        <NoResult searchText={searchText} />
       }
       {loadStatus === 'loaded' && <ItemList items={items} />}
     </div>
