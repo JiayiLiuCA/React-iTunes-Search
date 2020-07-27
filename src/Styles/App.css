@@ -4,9 +4,20 @@
     padding: 0;
 }
 
-html {
+/*fix scroll bar width change*/
+@media screen and (min-width: 769px) {
+    html {
     overflow-y: scroll;
+    }
 }
+
+/*hide scroll bar on mobile device*/
+@media screen and (max-width: 768px) {
+    html {
+        overflow: hidden;
+    }
+}
+
 
 .container{
     text-align: center;
