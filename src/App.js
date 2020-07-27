@@ -19,7 +19,7 @@ const App = () => {
 
   const handleChange = searchText => {
     setSearchText(searchText)
-    
+
     //reset page to 1 when searchText change
     setPage(1)
   }
@@ -42,7 +42,8 @@ const App = () => {
       //fetch url
       async function fetchItems() {
         const response = await fetch(
-          `https://itunes.apple.com/search?term=${searchText}&entity=album&country=ca&limit=200&offset=${200 * (page - 1)}`
+          `https://itunes.apple.com/search?term=${searchText}&entity=album&country=ca&limit=100&offset=${100 * (page - 1)}`,
+          {mode: "cors"}
         );
         const items = await response.json();
         console.log(items.results);
