@@ -2,7 +2,12 @@ import ReactModal from 'react-modal'
 
 import React from 'react'
 
-const ItemModal = ({ isOpen, handleOverlayClick}) => {
+// fix appElement warning
+// https://github.com/reactjs/react-modal/issues/576
+
+ReactModal.setAppElement('body');
+
+const ItemModal = ({ isOpen, handleOverlayClick, modalItem}) => {
 
     return (
         <div>
@@ -23,10 +28,12 @@ const ItemModal = ({ isOpen, handleOverlayClick}) => {
                     }
                 }}
             >
-                <p>modal</p>
+            {/*check if modalItem is undefined first*/}
+            {modalItem && <div>{modalItem.artistId}</div>}
             </ReactModal>
         </div>
     )
 }
+
 
 export default ItemModal

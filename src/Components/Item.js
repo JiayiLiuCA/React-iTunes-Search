@@ -6,7 +6,7 @@ const Item = ({ item, handleItemClick }) => {
     //Cut off "60x60bb.jpg"
     const artwork = item.artworkUrl60.slice(0, -11).concat("170x170bb.jpg")
     return (
-        <button className="item" onClick={() => handleItemClick()}>
+        <button className="item" onClick={() => handleItemClick(item)}> {/*Pass item to itemList then to Modal*/}
             <img src={artwork} alt="Artwork" />
             <div className="item-metadata">
                 <p className="item-metadata-collection-name">
