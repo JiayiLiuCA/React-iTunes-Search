@@ -3,7 +3,6 @@ import ItemList from './Components/ItemList'
 import Loading from './Components/Loading'
 import NoResult from './Components/NoResult'
 import PageButton from './Components/PageButton'
-
 //CSS
 import './Styles/App.css'
 import Header from './Components/Header';
