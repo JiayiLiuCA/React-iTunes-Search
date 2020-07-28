@@ -23,9 +23,14 @@ const ItemList = ({ items }) => {
     return (
         <div className="items-container">
             <div className="itemlist">
-                {items.map(item => (
-                    <Item item={item} key={item.collectionId} handleItemClick={handleItemClick} />
-                ))}
+                {items.map(
+                    item => (
+                        <Item
+                            item={item}
+                            key={item.collectionId}
+                            handleItemClick={handleItemClick}
+                        />
+                    ))}
             </div>
             <ItemModal
                 isOpen={modalIsOpen}

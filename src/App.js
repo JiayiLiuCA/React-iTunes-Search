@@ -41,8 +41,7 @@ const App = () => {
       //fetch url
       async function fetchItems() {
         const response = await fetch(
-          `https://itunes.apple.com/search?term=${searchText}&entity=album&country=ca&limit=150&offset=${150 * (page - 1)}`,
-          {mode: "cors"}
+          `https://itunes.apple.com/search?term=${searchText}&entity=album&country=ca&limit=150&offset=${150 * (page - 1)}`
         );
         const items = await response.json();
         console.log(items.results);
@@ -60,7 +59,7 @@ const App = () => {
       <Header handleChange={handleChange} loadStatus={loadStatus} />
       {loadStatus === 'loading' && <Loading />}
       {loadStatus === 'loaded' && !items.length &&
-        <NoResult searchText={searchText} />
+        <NoResult searchText={searchText}/>
       }
       <div className="content-container">
         {loadStatus !== 'beforeLoad' &&

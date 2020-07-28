@@ -1,0 +1,26 @@
+.modal-container {
+    position: absolute;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.modal-container img {
+    margin: 0;
+    padding-right: 100px;
+    border: 1px solid rgba(211,211,211,0.7)
+}
+
+.modal-item-data {
+    margin: 0;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal-item-metadata {
+    margin-top: 20px;
+}
