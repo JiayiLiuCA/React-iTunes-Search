@@ -1,4 +1,5 @@
 .modal-container {
+    margin: 0 !important;
     position: absolute;
     width: 90%;
     display: flex;
@@ -8,13 +9,11 @@
 }
 
 .modal-container img {
-    margin: 0;
     padding-right: 100px;
     border: 1px solid rgba(211,211,211,0.7)
 }
 
 .modal-item-data {
-    margin: 0;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -22,5 +21,12 @@
 }
 
 .modal-item-metadata {
-    margin-top: 20px;
+    padding-top: 20px;
 }
+
+.modal-external-link {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+

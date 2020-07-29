@@ -41,27 +41,42 @@ const ItemModal = ({ isOpen, handleOverlayClick, modalItem }) => {
                                 <br />
                                 {/*https://stackoverflow.com/a/650031/5228093*/}
                                 {modalItem.artistName.split(/ & |, /).map(artist => (
-                                    <p style={{
-                                        fontFamily: 'Ubuntu,sans-serif',
-                                        fontSize: '20px',
-                                    }}
-                                        key={artist}
-                                    >
+                                    <p style={{fontFamily: 'Ubuntu,sans-serif', fontSize: '20px',}} key={artist}>
                                         {artist}
                                     </p>
                                 ))}
-
                                 <br />
                                 <h4 style={{ color: 'rgb(80,80,80)' }}>
                                     {modalItem.primaryGenreName + ' · ' + modalItem.releaseDate.slice(0, 4)}
                                 </h4>
                             </div>
                             <div className="modal-external-link">
-                                Link1
-                                Link2
+                                {/*External links to apple*/}
+                                <a href={modalItem.collectionViewUrl}
+                                    style={{
+                                        background: 'url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?kind=album)',
+                                        width: '158px',
+                                        height: '45px'
+                                    }}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                </a>
+                                <a href={`itms${modalItem.collectionViewUrl.slice(5)}&app=itunes`}
+                                    style={{
+                                        background: 'url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg)',
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundSize: 'cover',
+                                        width: '158px',
+                                        height: '45px'
+                                    }}
+                                >
+                                </a>
+
                             </div>
                         </div>
-                    </div>}
+                    </div>
+                }
             </ReactModal>
         </div>
     )
