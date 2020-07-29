@@ -27,6 +27,6 @@
 .modal-external-link {
     width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: space-around;
 }
 

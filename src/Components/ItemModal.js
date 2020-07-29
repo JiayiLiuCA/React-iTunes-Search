@@ -41,7 +41,7 @@ const ItemModal = ({ isOpen, handleOverlayClick, modalItem }) => {
                                 <br />
                                 {/*https://stackoverflow.com/a/650031/5228093*/}
                                 {modalItem.artistName.split(/ & |, /).map(artist => (
-                                    <p style={{fontFamily: 'Ubuntu,sans-serif', fontSize: '20px',}} key={artist}>
+                                    <p style={{fontFamily: 'Ubuntu,sans-serif', fontSize: '18px',}} key={artist}>
                                         {artist}
                                     </p>
                                 ))}
