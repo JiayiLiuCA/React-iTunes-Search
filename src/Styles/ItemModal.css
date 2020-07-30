@@ -21,22 +21,30 @@
 
 .modal-item-data {
     margin: 0 !important;
-    padding-left: 20px;
     height: 360px;
     width: 360px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: left !important;
+
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
 .modal-item-metadata {
+    margin: 0 !important;
 
+    padding-bottom: 20px;
 }
 
 .modal-external-link {
+    margin: 0 !important;
     width: 100%;
     display: flex;
     justify-content: space-around;
+
+    padding-top: 20px;
+    border-top: 1px solid gray;
 }
 
