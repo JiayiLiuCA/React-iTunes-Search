@@ -1,27 +1,37 @@
 .modal-container {
     margin: 0 !important;
     position: absolute;
-    width: 90%;
+    height: 400px;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
+    justify-content: space-evenly;
 }
 
-.modal-container img {
-    padding-right: 100px;
-    border: 1px solid rgba(211,211,211,0.7)
+.modal-item-img {
+    display: inline-block;
+    margin: 0 !important;
+    width: 400px;
+    height: 400px;
+}
+
+.modal-item-img img{ 
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .modal-item-data {
-    height: 400px;
+    margin: 0 !important;
+    padding-left: 20px;
+    height: 360px;
+    width: 360px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: left !important;
 }
 
 .modal-item-metadata {
-    padding-top: 20px;
+
 }
 
 .modal-external-link {
