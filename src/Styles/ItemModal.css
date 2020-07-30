@@ -1,3 +1,30 @@
+
+.item-modal {
+    position: absolute;
+
+    top: -100px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    height: 500px;
+    width: 80vw;
+    min-width: 800px;
+    max-width: 1100px;
+
+    border: 1px solid #ccc;
+    background-color: rgba(255,255,255,0.95);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .modal-container {
     margin: 0 !important;
     position: absolute;
@@ -7,15 +34,6 @@
     justify-content: space-evenly;
 }
 
-/*
-
-@media screen and (max-width : 960px) {
-    .modal-container {
-        flex-direction: column;
-    }
-}
-
-*/
 
 .modal-item-img {
     display: inline-block;
@@ -29,21 +47,17 @@
     max-height: 100%;
 }
 
+
+
 .modal-item-data {
     margin: 0 !important;
-    height: 360px;
+    height: auto;
     width: 360px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: left !important;
 
-    padding-top: 20px;
-}
-
-.modal-item-metadata {
-    margin: 0 !important;
-    padding-bottom: 20px;
 }
 
 .modal-external-link {
@@ -51,8 +65,55 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-
-    padding-top: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     border-top: 1px solid gray;
+}
+
+.modal-metadata {
+    margin: 0 !important;
+}
+
+/* Mobile */
+
+@media screen and (max-width : 960px) {
+    h1 {
+        font-size: 1.3em;
+    }
+
+    .item-modal {
+        top: 0 !important;
+        width: 100%;
+        min-width: 300px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        height: 70% !important;
+
+    }
+    .modal-container {
+        flex-direction: column;
+        justify-content: normal;
+        align-items: center;
+        height: 100%;
+        
+    }
+    .modal-item-img {
+        width: 60%;
+        height: 60%;
+        max-width: 400px;
+        max-height: 400px;
+        margin: auto;
+    }
+
+    .modal-item-data {
+        width: 100%;
+        height: 100%;
+        max-width: 400px;
+        max-height: 400px;
+        margin: auto;
+    }
+    .modal-metadata {
+        padding-left : 10px;
+    }
 }
 
