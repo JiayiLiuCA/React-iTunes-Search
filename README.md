@@ -9,9 +9,9 @@ https://itunes-search.jiayiliu.ca/
 
 ## Installation
 
-`git clone https://github.com/JiayiLiuCA/react-itunes-search.git`
-`cd react-itunes-search`
-`yarn`
+`git clone https://github.com/JiayiLiuCA/react-itunes-search.git`  
+`cd react-itunes-search`  
+`yarn`  
 
 ## Dev 
 
