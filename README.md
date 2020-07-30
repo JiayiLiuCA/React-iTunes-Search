@@ -24,6 +24,5 @@ https://itunes-search.jiayiliu.ca/
 ## Built with
 
 * [react](https://reactjs.org/)
-* [create-react-app]
 * [iTunes search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
 * ES6/ES7 (async/await)
