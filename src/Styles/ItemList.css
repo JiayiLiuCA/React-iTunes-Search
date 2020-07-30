@@ -1,10 +1,16 @@
 
 .itemlist {
     display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(185px,auto));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(172px,auto));
+    gap: 2.5rem;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width : 960px) {
+    .itemlist {
+        gap: 0.5rem;
+    }
 }
 
 
