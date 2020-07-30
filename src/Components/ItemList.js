@@ -10,7 +10,7 @@ const ItemList = ({ items }) => {
     const [modalItem, setModalItem] = useState()
 
     const handleItemClick = item => {
-        console.log(item)
+        //console.log(item)
         setModalIsOpen(true)
         setModalItem(item)
     }

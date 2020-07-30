@@ -85,6 +85,7 @@
         top: 0 !important;
         width: 100%;
         min-width: 300px !important;
+        max-width: 550px;
         padding-top: 0px !important;
         padding-bottom: 0px !important;
         height: 70% !important;
@@ -114,7 +115,9 @@
         margin: auto;
     }
     .modal-metadata {
+        padding-top: 10px;  
         padding-left : 10px;
+        overflow: auto;
     }
 }
 

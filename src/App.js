@@ -41,10 +41,10 @@ const App = () => {
       //fetch url
       async function fetchItems() {
         const response = await fetch(
-          `https://itunes.apple.com/search?term=${searchText}&entity=album&country=us&limit=150&offset=${150 * (page - 1)}`
+          `https://itunes.apple.com/search?term=${searchText}&entity=album&country=ca&limit=120&offset=${120 * (page - 1)}`
         );
         const items = await response.json();
-        console.log(items.results);
+        //console.log(items.results);
         setItems(items.results);
 
         // set status to loaded after fetch
