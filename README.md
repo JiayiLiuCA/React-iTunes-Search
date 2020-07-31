@@ -4,6 +4,9 @@
 
 :musical_note: Simple web app for music search in iTunes Store and Apple Music
 
+## Preview
+![itunes-search-demo-compressed](https://user-images.githubusercontent.com/38990954/89086890-453a6f00-d360-11ea-9cb8-445d68729b60.gif)
+
 ## Live Demo
 https://itunes-search.jiayiliu.ca/
 
