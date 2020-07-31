@@ -7,6 +7,10 @@ import PageButton from './Components/PageButton'
 import './Styles/App.css'
 import Header from './Components/Header';
 
+//Google Analytics
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-174170152-1');
+
 
 const App = () => {
   const [searchText, setSearchText] = useState('')
