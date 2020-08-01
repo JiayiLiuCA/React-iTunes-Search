@@ -18,53 +18,74 @@ const App = () => {
   const [page, setPage] = useState(1)
   const [items, setItems] = useState([])
   const [loadStatus, setLoadStatus] = useState('beforeLoad')
+  const [countryCode, setCountryCode] = useState('CA')
 
   //console.log(isLoaded)
 
   const handleChange = searchText => {
-    setSearchText(searchText)
+    setSearchText(searchText);
 
     //reset page to 1 when searchText change
-    setPage(1)
+    setPage(1);
   }
 
   const nextPage = () => {
-    setPage(page + 1)
+    setPage(page + 1);
   }
 
   const prevPage = () => {
     if (page !== 1) {
-      setPage(page - 1)
+      setPage(page - 1);
     }
   }
 
-  //useEffect won't run if searchText is empty or unchanged
+  //Get current country code after mount
+  useEffect(() => {
+    async function fetchCountryCode() {
+      const response = await fetch(
+        `http://ip-api.com/json`
+      )
+      const data = await response.json();
+      setCountryCode(data.countryCode);
+    }
+    //fetch here
+    fetchCountryCode().catch((error) => {
+      console.log("Error: ", error);
+    });
+  }, [])
+
+
+
+  //Listen to searchText and page changes
   useEffect(() => {
     if (searchText) {
-      //set status to loading before fetch
-      setLoadStatus('loading')
-      //fetch url
       async function fetchItems() {
         const response = await fetch(
-          `https://itunes.apple.com/search?term=${searchText}&entity=album&country=ca&limit=120&offset=${120 * (page - 1)}`
+          `https://itunes.apple.com/search?term=${searchText}&entity=album&country=${countryCode}&limit=120&offset=${120 * (page - 1)}`
         );
-        const items = await response.json();
-        //console.log(items.results);
-        setItems(items.results);
-
+        const data = await response.json();
+        setItems(data.results);
         // set status to loaded after fetch
-        setLoadStatus('loaded')
+        setLoadStatus('loaded');
       }
-      fetchItems();
+      //set status to loading before fetch
+      setLoadStatus('loading');
+      //fetch url
+      fetchItems().catch((error) => {
+        console.log("Error: ", error);
+      });
     }
   }, [searchText, page])
+
+
+
 
   return (
     <div className={`container${loadStatus !== 'beforeLoad' ? ' container-loaded' : ''}`}>
       <Header handleChange={handleChange} loadStatus={loadStatus} />
       {loadStatus === 'loading' && <Loading />}
       {loadStatus === 'loaded' && !items.length &&
-        <NoResult searchText={searchText}/>
+        <NoResult searchText={searchText} />
       }
       <div className="content-container">
         {loadStatus !== 'beforeLoad' &&

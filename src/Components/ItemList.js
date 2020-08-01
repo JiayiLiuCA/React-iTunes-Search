@@ -16,7 +16,6 @@ const ItemList = ({ items }) => {
     }
 
     const handleOverlayClick = () => {
-        //console.log("overlayClick")
         setModalIsOpen(false)
     }
 
