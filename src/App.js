@@ -43,7 +43,7 @@ const App = () => {
   useEffect(() => {
     async function fetchCountryCode() {
       const response = await fetch(
-        `http://ip-api.com/json`
+        `https://ip-api.com/json`
       )
       const data = await response.json();
       setCountryCode(data.countryCode);
