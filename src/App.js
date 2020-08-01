@@ -39,16 +39,18 @@ const App = () => {
     }
   }
 
-  //Get current country code after mount
+  // Get current country code after mount
+  // https://ipapi.co/api/#location-of-clients-ip
   useEffect(() => {
     async function fetchCountryCode() {
       const response = await fetch(
-        `http://ip-api.com/json`
+        `https://ipapi.co/country`
       )
-      const data = await response.json();
-      setCountryCode(data.countryCode);
+      const data = await response.text();
+      console.log(data);
+      setCountryCode(data);
     }
-    //fetch here
+    //fetch
     fetchCountryCode().catch((error) => {
       console.log("Error: ", error);
     });
@@ -70,7 +72,8 @@ const App = () => {
       }
       //set status to loading before fetch
       setLoadStatus('loading');
-      //fetch url
+
+      //fetch
       fetchItems().catch((error) => {
         console.log("Error: ", error);
       });
