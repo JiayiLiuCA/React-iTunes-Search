@@ -75,7 +75,7 @@ const App = () => {
         console.log("Error: ", error);
       });
     }
-  }, [searchText,page])
+  }, [searchText,page,countryCode])
 
 
 
