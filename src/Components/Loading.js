@@ -7,6 +7,7 @@ import reactLogo from '../img/reactLogo.svg'
 const Loading = () => {
     return (
         <div className="search-logo-container">
+            {/*Loading spinning animation*/}
             <img src={reactLogo}
                 className="react-search-logo"
                 width='30vmin'

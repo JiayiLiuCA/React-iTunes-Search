@@ -5,6 +5,7 @@ import iTunesMusicBadge from '../img/itunes-music-badge.svg'
 const ItemModalLink = ({ url }) => {
     return (
         <div className="modal-external-link">
+            {/*Links to apple music and iTunes store*/}
             <a href={url}
                 style={{
                     background: `url(${appleMusicBadge})`,

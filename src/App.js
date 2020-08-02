@@ -3,6 +3,7 @@ import ItemList from './Components/ItemList'
 import Loading from './Components/Loading'
 import NoResult from './Components/NoResult'
 import PageButton from './Components/PageButton'
+
 //CSS
 import './Styles/App.css'
 import Header from './Components/Header';
@@ -14,14 +15,15 @@ ReactGA.pageview(window.location.pathname + window.location.search);
 
 
 const App = () => {
+  //useState hooks
   const [searchText, setSearchText] = useState('')
   const [page, setPage] = useState(1)
   const [items, setItems] = useState([])
   const [loadStatus, setLoadStatus] = useState('beforeLoad')
   const [countryCode, setCountryCode] = useState('CA')
 
-  //console.log(isLoaded)
-
+  //prop passed to header component
+  //Listen to changes of the input field
   const handleChange = searchText => {
     setSearchText(searchText);
 
@@ -63,7 +65,12 @@ const App = () => {
     if (searchText) {
       async function fetchItems() {
         const response = await fetch(
-          `https://itunes.apple.com/search?term=${searchText}&entity=album&country=${countryCode}&limit=120&offset=${120 * (page - 1)}`
+          `https://itunes.apple.com/search?
+            term=${searchText}
+            &entity=album
+            &country=${countryCode}
+            &limit=120
+            &offset=${120 * (page - 1)}`
         );
         const data = await response.json();
         setItems(data.results);
@@ -86,14 +93,20 @@ const App = () => {
   return (
     <div className={`container${loadStatus !== 'beforeLoad' ? ' container-loaded' : ''}`}>
       <Header handleChange={handleChange} loadStatus={loadStatus} />
+      {/*loading Animation*/}
       {loadStatus === 'loading' && <Loading />}
+
+      {/*No result from search*/}
       {loadStatus === 'loaded' && !items.length &&
         <NoResult searchText={searchText} />
       }
       <div className="content-container">
+        {/*Display page button after load*/}
         {loadStatus !== 'beforeLoad' &&
           <PageButton page={page} nextPage={nextPage} prevPage={prevPage} />
         }
+
+        {/*Display fetched items*/}
         {loadStatus === 'loaded' &&
           <ItemList items={items} />
         }

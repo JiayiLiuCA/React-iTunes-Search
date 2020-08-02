@@ -9,18 +9,21 @@ const ItemList = ({ items }) => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const [modalItem, setModalItem] = useState()
 
+    //Open modal when item is clicked
+    //Pass item as prop to modal
     const handleItemClick = item => {
-        //console.log(item)
         setModalIsOpen(true)
         setModalItem(item)
     }
 
+    //Close Modal on overlay click
     const handleOverlayClick = () => {
         setModalIsOpen(false)
     }
 
     return (
         <div className="items-container">
+            {/* Items fetched from iTunes*/}
             <div className="itemlist">
                 {items.map(
                     item => (
@@ -31,6 +34,7 @@ const ItemList = ({ items }) => {
                         />
                     ))}
             </div>
+            {/* React Modal*/}
             <ItemModal
                 isOpen={modalIsOpen}
                 modalItem={modalItem}

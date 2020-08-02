@@ -14,6 +14,7 @@ const Header = ({ handleChange, loadStatus }) => {
 
     return (
         <div className="header">
+            {/*Personal Icon*/}
             <div className="header-icon">
                 <img src={favicon}
                     width="35"
@@ -21,6 +22,8 @@ const Header = ({ handleChange, loadStatus }) => {
                     alt="logo"
                 />
             </div>
+
+            {/*Input field*/}
             {/* transform search bar to middle before searching */}
             <div className={`header-search-bar${loadStatus === 'beforeLoad' ? ' header-search-bar-transform' : ''}`}>
                 <div className="header-search-bar-input">
@@ -39,6 +42,8 @@ const Header = ({ handleChange, loadStatus }) => {
                     />
                 </div>
             </div>
+
+            {/*Github Icon*/}
             <div className="header-github">
                 <a
                     className="navbar-item"
