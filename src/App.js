@@ -65,12 +65,7 @@ const App = () => {
     if (searchText) {
       async function fetchItems() {
         const response = await fetch(
-          `https://itunes.apple.com/search?
-            term=${searchText}
-            &entity=album
-            &country=${countryCode}
-            &limit=120
-            &offset=${120 * (page - 1)}`
+          `https://itunes.apple.com/search?term=${searchText}&entity=album&country=${countryCode}&limit=120&offset=${120 * (page - 1)}`
         );
         const data = await response.json();
         setItems(data.results);
