@@ -49,7 +49,7 @@ const App = () => {
         `https://ipapi.co/country`
       )
       const data = await response.text();
-      console.log(data);
+      //console.log(data);
       setCountryCode(data);
     }
     //fetch
